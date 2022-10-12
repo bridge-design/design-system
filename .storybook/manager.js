@@ -1,6 +1,6 @@
 import { addons } from "@storybook/addons";
-import goRightTheme from "./goright.theme";
+import bridgeTheme from "./bridge.theme";
 
 addons.setConfig({
-  theme: goRightTheme,
+  theme: bridgeTheme,
 });

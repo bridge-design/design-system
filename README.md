@@ -1,4 +1,4 @@
-# GoRight Design System
+# Bridge-the-Gap Design System
 
 ## Scripts
 

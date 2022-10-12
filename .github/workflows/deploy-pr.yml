@@ -56,12 +56,12 @@ jobs:
        
       - id: get-preview-url
         name: Get preview url
-        run: echo "::set-output name=preview-url::https://design-system.goright.io/pr:${{ github.event.number }}"
+        run: echo "::set-output name=preview-url::https://design-system.bridge-the-gap.dev/pr:${{ github.event.number }}"
         shell: bash
       - name: Post Preview Comment
         uses: phulsechinmay/rewritable-pr-comment@v0.3.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_IDENTIFIER: GoRight_preview_comment
+          COMMENT_IDENTIFIER: Bridge_preview_comment
           message: |
             A preview of this PR can be found at ${{ steps.get-preview-url.outputs.preview-url }}.

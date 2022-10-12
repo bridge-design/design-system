@@ -1,6 +1,6 @@
 {
   "name": "@bridge-the-gap/design-system",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "main": "dist/design-system.js",
   "files": [
     "dist/**"
@@ -52,7 +52,7 @@
     "postcss": "^8.2.15",
     "postcss-loader": "^4.2.0",
     "prettier": "^2.2.1",
-    "semantic-release": "^18.0.0",
+    "semantic-release": "^19.0.5",
     "storybook-addon-designs": "^6.0.1",
     "style-dictionary": "^2.10.3",
     "url-loader": "^0.6.2",
@@ -79,6 +79,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/goright-io/design-system.git"
+    "url": "https://github.com/bridge-design/design-system.git"
   }
 }

@@ -1,5 +1,5 @@
 import { create } from "@storybook/theming";
-import logoImage from "./public/goright-logo.png";
+import logoImage from "./public/bridge_tmp_logo.png";
 
 import typography from "../src/tokens/dist/typography.json";
 import colors from "../src/tokens/dist/colors.json";
@@ -32,7 +32,7 @@ export default create({
   inputBorder: colors.gray["200"],
   inputTextColor: colors.light["on-background"]["900"],
 
-  brandTitle: "GoRight Design System",
-  brandUrl: "https://goright.io",
+  brandTitle: "Bridge-the-Gap Design System",
+  brandUrl: "https://bridge-the-gap.dev",
   brandImage: logoImage,
 });

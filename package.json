@@ -1,6 +1,6 @@
 {
   "name": "@bridge-the-gap/design-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/design-system.js",
   "files": [
     "dist/**"

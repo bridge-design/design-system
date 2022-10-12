@@ -1,10 +1,10 @@
 import React from "react";
 import "../src/global.css";
-import goRightTheme from "./goright.theme";
+import bridgeTheme from "./bridge.theme";
 
 export const parameters = {
   docs: {
-    theme: goRightTheme,
+    theme: bridgeTheme,
   },
   options: {
     storySort: {

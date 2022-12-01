@@ -20,12 +20,11 @@ StyleDictionary.registerTransform({
   name: "size/px", // notice: the name is an override of an existing predefined method
   type: "value",
   matcher: function (prop) {
-    /* supports both "pixel" and "pixels" */
     return (
       prop &&
       prop.original &&
-      prop.original.unit &&
-      prop.original.unit.startsWith("pixel")
+      prop.original.type &&
+      prop.original.type === "dimension"
     );
   },
   transformer: function (prop) {

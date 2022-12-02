@@ -20,12 +20,11 @@ StyleDictionary.registerTransform({
   name: "size/px", // notice: the name is an override of an existing predefined method
   type: "value",
   matcher: function (prop) {
-    /* supports both "pixel" and "pixels" */
     return (
       prop &&
       prop.original &&
-      prop.original.unit &&
-      prop.original.unit.startsWith("pixel")
+      prop.original.type &&
+      prop.original.type === "dimension"
     );
   },
   transformer: function (prop) {
@@ -48,7 +47,7 @@ const isTypographyToken = (prop) => {
       "paragraphIndent",
       "paragraphSpacing",
       "textCase",
-    ].indexOf(prop.path[1]) !== -1
+    ].indexOf(prop.path[2]) !== -1
   );
 };
 
@@ -97,7 +96,11 @@ function processDictionary(obj) {
 StyleDictionary.registerFormat({
   name: "json/colors",
   formatter: function (dictionary) {
-    return JSON.stringify(processDictionary(dictionary.properties), null, 2);
+    return JSON.stringify(
+      processDictionary(dictionary.properties.color),
+      null,
+      2
+    );
   },
 });
 
@@ -118,12 +121,12 @@ StyleDictionary.registerFormat({
       textCase: {},
     };
     // dictionary.properties.map((token) =>
-    for (const propname in dictionary.properties) {
+    for (const propname in dictionary.properties.typography) {
       const nameWithoutPrefix = _.camelCase(
         propname.startsWith("text-") ? propname.substring(5) : propname
       );
 
-      const propDict = dictionary.properties[propname];
+      const propDict = dictionary.properties.typography[propname];
       for (const prop in propDict) {
         textTokens[prop][nameWithoutPrefix] = propDict[prop].value;
       }

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import classnames from "classnames";
-import { getColors, getBreakpoints } from "../../utils/getTheme";
+import { getBreakpoints } from "../../utils/getTheme";
 
 /* Text
  *
@@ -12,7 +12,6 @@ const Text = ({
   children,
   as: Component = "p",
   className,
-  highlight,
   responsive,
   ...props
 }) => {
@@ -38,7 +37,6 @@ const Text = ({
     xsbolder: "text-xsBolder font-xsBolder tracking-xsBolder leading-xsBolder",
   };
 
-  const highlightClasses = `bg-highlight-${highlight} bg-${variant} bg-no-repeat`;
   const responsiveClasses = responsive
     ? Object.entries(responsive)
         .map(
@@ -56,7 +54,6 @@ const Text = ({
     <Component
       className={classnames(
         variants[variant.toLowerCase()],
-        highlight ? highlightClasses : "",
         responsiveClasses,
         className
       )}
@@ -81,7 +78,6 @@ Text.propTypes = {
     responsivePropShape
   ),
   className: PropTypes.string,
-  highlight: PropTypes.oneOf(Object.keys(getColors())),
 };
 
 Text.defaultProps = {

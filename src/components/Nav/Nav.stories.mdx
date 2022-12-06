@@ -8,23 +8,35 @@ import Nav from ".";
 
 export const navItems = [
   {
-    name: "Workshops",
-    href: "/workshops",
+    name: "Showcases",
+    href: "/showcases",
   },
   {
     name: "Services",
     href: "/services",
   },
   {
-    name: "About us",
+    name: "Workshops",
+    href: "/workshops",
+  },
+  {
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    name: "About",
     href: "/about",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
   },
 ];
 
 <Canvas>
   <Story
     name="Default"
-    args={{ items: navItems, currentPath: "/services" }}
+    args={{ items: navItems, currentPath: "/showcases" }}
     parameters={{ design: { disable: true } }}
   >
     {(args) => <Nav {...args} className="w-full" />}

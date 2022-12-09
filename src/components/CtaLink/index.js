@@ -13,12 +13,13 @@ const CtaLink = ({
   ref,
   children,
   className,
-  arrow = "end",
+  borderClassName,
+  arrow = "no",
   underline = false,
   ...props
 }) => {
   const classes = classnames(
-    "cursor-pointer text-primary-500 inline-flex items-center group hover:text-primary-700 focus:bg-highlight-yellow-100 bg-no-repeat",
+    "cursor-pointer text-primary-500 hover:text-primary-700 inline-flex items-center group bg-no-repeat",
     className
   )
 
@@ -34,12 +35,12 @@ const CtaLink = ({
       {arrow === "start" && (
         <span
           key="start"
-          className="transition duration-200 transform group-hover:-translate-x-1 motion-reduce:transform-none !no-underline"
+          className="no-underline transition duration-200 transform group-hover:-translate-x-1 motion-reduce:transform-none"
         >
           ←{"\u2004"}
         </span>
       )}
-      <span key="body" className={underline ? "underline" : "no"}>
+      <span key="body" className={underline ? `border-b pb-4 border-primary-500 hover:border-primary-700 ${borderClassName}` : "no"}>
         {children}
       </span>
       {arrow === "end" && (
@@ -55,11 +56,13 @@ const CtaLink = ({
 };
 
 CtaLink.propTypes = {
+  as: PropTypes.any,
   children: PropTypes.node,
   ref: PropTypes.node,
   to: PropTypes.string,
   className: PropTypes.string,
-  arrow: PropTypes.oneOf(["start", "end"]),
+  borderClassName: PropTypes.string,
+  arrow: PropTypes.oneOf(["start", "end", "no"]),
   underline: PropTypes.bool,
 };
 

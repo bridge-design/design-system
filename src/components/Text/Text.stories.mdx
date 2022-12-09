@@ -24,28 +24,13 @@ Any text on the page
   </Story>
   <Story
     name="With As Prop"
-    args={{ variant: "base", as: "h2" }}
+    args={{ variant: "base", as: "i" }}
     argTypes={{
       variant: { options: variants, control: { type: "select" } },
     }}
     parameters={{ design: { disable: true } }}
   >
     {(args) => <Text {...args}>{placeholder}</Text>}
-  </Story>
-  <Story
-    name="With Highlight"
-    args={{ variant: "6Xl", highlight: "yellow-100" }}
-    argTypes={{
-      highlight: { options: Object.keys(colors), control: { type: "select" } },
-      variant: { options: variants, control: { type: "select" } },
-    }}
-    parameters={{ design: { disable: true } }}
-  >
-    {(args) => (
-      <Text as="span" {...args}>
-        {"Figma and React"}
-      </Text>
-    )}
   </Story>
   <Story
     name="Responsive"

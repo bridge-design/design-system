@@ -3,13 +3,12 @@ import React, { useState } from "react";
 import Text from "../Text";
 import { Menu24 } from "@carbon/icons-react";
 import { Close24 } from "@carbon/icons-react";
-import classnames from "classnames";
 
 /* Nav
  *
  * horizontal menu with links
  */
-const Nav = ({ items, linkComponent, className, currentPath, children }) => {
+const Nav = ({ items, linkComponent, className, children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   return (
     <nav className={className}>
@@ -38,10 +37,7 @@ const Nav = ({ items, linkComponent, className, currentPath, children }) => {
                   variant="2Xl"
                   as={linkComponent || "a"}
                   href={item.href}
-                  highlight={
-                    currentPath == item.href ? "yellow-100" : undefined
-                  }
-                  className="hover:bg-highlight-yellow-100"
+                  className="border-gray-900 hover:border-b-2"
                 >
                   {item.name}
                 </Text>

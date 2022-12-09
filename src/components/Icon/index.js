@@ -12,9 +12,9 @@ const Icon = ({ name, className }) => {
   return (
     Icon && (
       <span
-        className={classnames("inline-flex p-4 bg-primary-50", className)}
+        className={classnames("inline-flex p-4 bg-primary-50 text-primary-500", className)}
       >
-        <Icon className="text-primary-500" />
+        <Icon />
       </span>
     )
   )

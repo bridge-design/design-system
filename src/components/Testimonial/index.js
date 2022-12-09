@@ -5,6 +5,7 @@ import { ArrowRight32, ArrowLeft32 } from "@carbon/icons-react";
 import React, { useLayoutEffect, useRef, useState, useCallback } from "react";
 import { Swiper, Scrollbar, Navigation } from "swiper/core";
 import { useDebouncedCallback } from "use-debounce";
+import { ReactComponent as QuotationIcon } from './quotation-icon.svg';
 
 Swiper.use([Scrollbar, Navigation]);
 
@@ -13,24 +14,27 @@ const TestimonialItem = ({ name, text, avatar, colors }) => {
     <div className="mr-4 transition duration-300 ease-out transform swiper-slide md:mr-8 last:mr-0 motion-safe:hover:scale-105">
       <div
         className={classnames(
-          "select-none w-[280px] sm:w-[380px] p-6 md:p-10 rounded-lg h-full flex flex-col",
+          "select-none w-[280px] sm:w-[380px] p-3 md:p-6 rounded-[4px] h-full flex flex-col",
           colors
         )}
       >
-        <Text variant="xlBolder" as="p" className="mb-6">
-          {text}
-        </Text>
-        <div className="flex items-center mt-auto">
-          {avatar && (
-            <img
-              src={avatar}
-              alt={name}
-              className="w-12 h-12 mr-3 rounded-full"
-            />
-          )}
-          <Text variant="xlBolder" as="p">
-            {name}
+        <QuotationIcon />
+        <div className="px-3 pb-3 -mt-5 md:px-4 md:pb-4">
+          <Text variant="xl" as="p" className="mb-6">
+            {text}
           </Text>
+          <div className="flex items-center mt-auto">
+            {avatar && (
+              <img
+                src={avatar}
+                alt={name}
+                className="w-12 h-12 mr-3 rounded-lg"
+              />
+            )}
+            <Text variant="xl" as="p">
+              {name}
+            </Text>
+          </div>
         </div>
       </div>
     </div>

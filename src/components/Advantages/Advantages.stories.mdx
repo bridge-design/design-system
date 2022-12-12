@@ -1,0 +1,26 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { config, withDesign } from "storybook-addon-designs";
+
+import Advantages from ".";
+
+<Meta title="Components/Advantages" decorators={[withDesign]} />
+
+## Advantages
+
+Three columns with best advantages of design-system for teams and enterprises
+
+export const parameters = {
+  design: config({
+    type: "figma",
+    url: "https://www.figma.com/file/hmQZxeC57460iYOpa0PU8G/Bridge-the-gap-website?node-id=84%3A570&t=0AON8HXv6mYvJgqR-0",
+  }),
+  controls: { disable: true },
+};
+
+<Canvas>
+  <Story name="Dark" parameters={parameters}>
+    <Advantages colorSchema="dark" />
+  </Story>
+</Canvas>
+
+<ArgsTable of={Badge} />

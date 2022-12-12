@@ -36,17 +36,17 @@ export const IconsBridge = [
   <Story name="Black&White" parameters={{ design: { disable: true } }}>
     {IconsBridge.map((icon) => (
       <div className="inline-flex m-2" key={icon}>
-        <Icon name={icon} />
+        <Icon name={icon} className="bg-black text-white" />
       </div>
     ))}
   </Story>
   <Story name="Grayed" parameters={{ design: { disable: true } }}>
-  <div className="bg-gray-900 p-10">
-    {IconsBridge.map((icon) => (
-      <div className="inline-flex m-2" key={icon}>
-        <Icon name={icon} className="bg-dark-background-800 text-gray-50"/>
-      </div>
-    ))}
+    <div className="bg-gray-900 p-10">
+      {IconsBridge.map((icon) => (
+        <div className="inline-flex m-2 " key={icon}>
+          <Icon name={icon} className="bg-gray-800 text-gray-100" />
+        </div>
+      ))}
     </div>
   </Story>
 </Canvas>

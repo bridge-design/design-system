@@ -5,3 +5,4 @@ tests/report
 dist
 storybook-static
 .env
+.DS_Store

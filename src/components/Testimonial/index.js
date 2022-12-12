@@ -5,7 +5,7 @@ import { ArrowRight32, ArrowLeft32 } from "@carbon/icons-react";
 import React, { useLayoutEffect, useRef, useState, useCallback } from "react";
 import { Swiper, Scrollbar, Navigation } from "swiper/core";
 import { useDebouncedCallback } from "use-debounce";
-import { ReactComponent as QuotationIcon } from './quotation-icon.svg';
+import { ReactComponent as QuotationIcon } from "./quotation-icon.svg";
 
 Swiper.use([Scrollbar, Navigation]);
 
@@ -24,13 +24,7 @@ const TestimonialItem = ({ name, text, avatar, colors }) => {
             {text}
           </Text>
           <div className="flex items-center mt-auto">
-            {avatar && (
-              <img
-                src={avatar}
-                alt={name}
-                className="w-12 h-12 mr-3 rounded-lg"
-              />
-            )}
+            {avatar && <img src={avatar} alt={name} className="w-12 h-12 mr-3 rounded-lg" />}
             <Text variant="xl" as="p">
               {name}
             </Text>
@@ -108,19 +102,13 @@ function Testimonial({ testimonials, title }) {
           <div className="hidden ml-auto md:flex">
             <button
               ref={swiperNavigationPrevRef}
-              className={classnames(
-                getArrowColor(isPrevButtonDisabled),
-                "mr-12"
-              )}
+              className={classnames(getArrowColor(isPrevButtonDisabled), "mr-12")}
             >
               <ArrowLeft32 />
             </button>
             <button
               ref={swiperNavigationNextRef}
-              className={classnames(
-                getArrowColor(isNextButtonDisabled),
-                "mr-12"
-              )}
+              className={classnames(getArrowColor(isNextButtonDisabled), "mr-12")}
             >
               <ArrowRight32 />
             </button>

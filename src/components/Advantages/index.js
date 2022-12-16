@@ -1,31 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Text from "../Text";
-import Icon from "../Icon";
 import classnames from "classnames";
-//import { UserIdentification } from "@carbon/icons-react/";
+import Icon from "../Icon";
 
-const Advantages = ({ colorSchema }) => {
-  const CONTENT = [
-    {
-      icon: "UserIdentification",
-      title: "5× Faster",
-      description:
-        "Reusing the same design and development components and patterns from a design system library. allows all organizational teams to create, test, and launch products more quickly.",
-    },
-    {
-      icon: "Rocket",
-      title: "Coherent",
-      description:
-        "Ensuring that your company's identity and the experience it provides for customers is consistent across the board for all of your digital products.",
-    },
-    {
-      icon: "TreeView",
-      title: "Scalability",
-      description:
-        "Maintain and scale your products more easily. The entire product line will be aligned, so each new release will work seamlessly with all previous versions and updates (and vice versa)",
-    },
-  ];
+const Advantages = ({ colorSchema, content }) => {
   const colorClass =
     colorSchema === "dark"
       ? "bg-light-on-background-900 text-light-on-background-50"
@@ -33,11 +12,10 @@ const Advantages = ({ colorSchema }) => {
 
   return (
     <div className={classnames(colorClass, " py-3.5 px-10 flex justify-between  gap-20")}>
-      {CONTENT.map((it) => {
+      {content.map((it) => {
         return (
           <div key={it.title} className="flex flex-col">
-            {/* <UserIdentification size="16" /> */}
-            <Icon name={it.icon} className={colorClass} />
+            <Icon name={it.icon} />
             <Text as="span" variant="2xl" className="p-1 text-light-on-background-50">
               {it.title}
             </Text>
@@ -53,7 +31,13 @@ const Advantages = ({ colorSchema }) => {
 
 Advantages.propTypes = {
   colorSchema: PropTypes.string | "dark" | "light",
-  // role: PropTypes.string,
+  content: PropTypes.arrayOf(
+    PropTypes.shape({
+      icon: PropTypes.node,
+      title: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
 };
 
 export default Advantages;

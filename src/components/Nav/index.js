@@ -12,10 +12,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   return (
     <nav className={className}>
-      <button
-        className="block ml-auto md:hidden"
-        onClick={() => setMenuOpen((isOpen) => !isOpen)}
-      >
+      <button className="block ml-auto md:hidden" onClick={() => setMenuOpen((isOpen) => !isOpen)}>
         {isMenuOpen ? (
           <Close24 className="m-6 text-light-on-background-900" />
         ) : (

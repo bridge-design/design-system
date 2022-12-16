@@ -7,17 +7,22 @@ import classNames from "classnames";
  *
  * Styled container around Carbon Design icon
  */
+
 const Icon = ({ name, className }) => {
   const conditional = className
     ? className + "inline-flex p-4 rounded-[4px]"
     : "bg-primary-50 text-primary-500 inline-flex p-4 rounded-[4px]";
+
   const Icon = CarbonIcons[name];
+
+  if (!Icon) {
+    return null;
+  }
+
   return (
-    Icon && (
-      <span className={classNames("inline-flex p-4 rounded-[4px]", conditional)}>
-        <Icon className={className} />
-      </span>
-    )
+    <span className={classNames("inline-flex p-4 rounded-[4px]", conditional)}>
+      <Icon className={className} />
+    </span>
   );
 };
 

@@ -20,6 +20,7 @@ module.exports = {
     "storybook-addon-designs",
     "creevey",
   ],
+  staticDirs: ["../public"],
   webpackFinal: async (config) => {
     // use @babel/preset-react for JSX and env (instead of staged presets)
     config.module.rules[0].use[0].options.presets = [
@@ -74,9 +75,7 @@ module.exports = {
     config.plugins.push({
       apply: (compiler) => {
         compiler.hooks.beforeCompile.tap("WatchTokensSource", (params) => {
-          params.compilationDependencies.add(
-            path.resolve(__dirname, tokensFileName)
-          );
+          params.compilationDependencies.add(path.resolve(__dirname, tokensFileName));
         });
       },
     });
@@ -87,9 +86,7 @@ module.exports = {
     config.plugins.push({
       apply: (compiler) => {
         compiler.hooks.invalid.tap("RebuildTokens", (fn) => {
-          const StyleDictionary = require("style-dictionary").extend(
-            `${tokensPath}/config.js`
-          );
+          const StyleDictionary = require("style-dictionary").extend(`${tokensPath}/config.js`);
 
           if (/design-tokens.json$/.test(fn)) {
             // StyleDictionary.extend("./.tokens/config.js");

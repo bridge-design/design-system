@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Text from "../Text";
 import classnames from "classnames";
-import { ArrowRight32, ArrowLeft32 } from "@carbon/icons-react";
+import { ArrowRight, ArrowLeft } from "@carbon/icons-react";
 import React, { useLayoutEffect, useRef, useState, useCallback } from "react";
 import { Swiper, Scrollbar, Navigation } from "swiper/core";
 import { useDebouncedCallback } from "use-debounce";
@@ -104,13 +104,13 @@ function Testimonial({ testimonials, title }) {
               ref={swiperNavigationPrevRef}
               className={classnames(getArrowColor(isPrevButtonDisabled), "mr-12")}
             >
-              <ArrowLeft32 />
+              <ArrowLeft size={32} />
             </button>
             <button
               ref={swiperNavigationNextRef}
               className={classnames(getArrowColor(isNextButtonDisabled), "mr-12")}
             >
-              <ArrowRight32 />
+              <ArrowRight size={32} />
             </button>
           </div>
         </div>

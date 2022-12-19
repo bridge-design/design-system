@@ -8,10 +8,8 @@ import classNames from "classnames";
  * Styled container around Carbon Design icon
  */
 
-const Icon = ({ name, className }) => {
-  const conditional = className
-    ? className + "inline-flex p-4 rounded-[4px]"
-    : "bg-primary-50 text-primary-500 inline-flex p-4 rounded-[4px]";
+const Icon = ({ name, className, size = 16 }) => {
+  const conditional = className ? className : "bg-primary-50 text-primary-500";
 
   const Icon = CarbonIcons[name];
 
@@ -20,8 +18,8 @@ const Icon = ({ name, className }) => {
   }
 
   return (
-    <span className={classNames("inline-flex p-4 rounded-[4px]", conditional)}>
-      <Icon className={className} />
+    <span className={classNames("inline-flex p-4 rounded-[4px] max-w-min", conditional)}>
+      <Icon className={className} size={size} />
     </span>
   );
 };
@@ -29,6 +27,7 @@ const Icon = ({ name, className }) => {
 Icon.propTypes = {
   name: PropTypes.string,
   className: PropTypes.string,
+  size: PropTypes.number,
 };
 
 export default Icon;

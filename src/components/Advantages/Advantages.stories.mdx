@@ -1,11 +1,21 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 import { config, withDesign } from "storybook-addon-designs";
-import Icon from ".";
-import * as CarbonIcons from "@carbon/icons-react";
 
 import Advantages from ".";
 
 export const CONTENT = [
+  {
+    icon: "UserIdentification",
+    title: "5× Faster",
+    description:
+      "Reusing the same design and development components and patterns from a design system library. allows all organizational teams to create, test, and launch products more quickly.",
+  },
+  {
+    icon: "Rocket",
+    title: "Coherent",
+    description:
+      "Ensuring that your company's identity and the experience it provides for customers is consistent across the board for all of your digital products.",
+  },
   {
     icon: "UserIdentification",
     title: "5× Faster",
@@ -42,7 +52,10 @@ export const parameters = {
 
 <Canvas>
   <Story name="Dark" parameters={parameters}>
-    <Advantages colorSchema="dark" content={CONTENT} />
+    <Advantages colorSchema="dark" content={CONTENT.slice(2)} />
+  </Story>
+  <Story name="Light" parameters={parameters}>
+    <Advantages colorSchema="light" content={CONTENT} />
   </Story>
 </Canvas>
 

@@ -5,16 +5,16 @@ import { LogoTwitter, LogoLinkedin, LogoGithub } from "@carbon/icons-react";
 
 const ProfileCard = ({ photoUrl, name, role, twitter, linkedin, github }) => {
   return (
-    <div className="flex rounded-[4px] bg-light-on-background-200 max-w-max">
-      <img src={photoUrl} alt={name} className="rounded-l-[4px]" />
-      <div className="p-10 py-20">
+    <div className="flex flex-col md:flex-row rounded-[4px] bg-light-on-background-200 max-w-max">
+      <img src={photoUrl} alt={name} className="rounded-l-[4px] max-w-max w-full" />
+      <div className="p-4 md:p-10 md:py-20">
         <Text variant="2xl" className="mb-1">
           {name}
         </Text>
-        <Text variant="base" className="mb-16">
-          {role}{" "}
+        <Text variant="base" className="mb-4 md:mb-16">
+          {role}
         </Text>
-        <div className="flex gap-6">
+        <div className="flex justify-center gap-6 md:justify-start">
           <a href={twitter}>
             <LogoTwitter size={32} />
           </a>

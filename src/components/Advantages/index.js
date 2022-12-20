@@ -15,7 +15,7 @@ const Advantages = ({ colorSchema, content }) => {
     colorSchema === "dark" ? "bg-light-on-background-800" : "bg-light-on-background-900";
 
   return (
-    <div className={classnames("grid grid-cols-3 ", colorTextClass)}>
+    <div className={classnames("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ", colorTextClass)}>
       {content.map((it) => {
         return (
           <div key={it.title} className="flex flex-col">

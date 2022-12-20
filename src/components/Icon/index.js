@@ -1,28 +1,33 @@
 import PropTypes from "prop-types";
 import React from "react";
 import * as CarbonIcons from "@carbon/icons-react";
-import classnames from "classnames";
+import classNames from "classnames";
 
 /* Icon
  *
  * Styled container around Carbon Design icon
  */
-const Icon = ({ name, className }) => {
+
+const Icon = ({ name, className, size = 16 }) => {
+  const conditional = className ? className : "bg-primary-50 text-primary-500";
+
   const Icon = CarbonIcons[name];
+
+  if (!Icon) {
+    return null;
+  }
+
   return (
-    Icon && (
-      <span
-        className={classnames("inline-flex p-4 bg-primary-50", className)}
-      >
-        <Icon className="text-primary-500" />
-      </span>
-    )
-  )
+    <span className={classNames("inline-flex p-4 rounded-[4px] max-w-min", conditional)}>
+      <Icon className={className} size={size} />
+    </span>
+  );
 };
 
 Icon.propTypes = {
   name: PropTypes.string,
   className: PropTypes.string,
+  size: PropTypes.number,
 };
 
 export default Icon;

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Text from "../Text";
-import { Menu24 } from "@carbon/icons-react";
-import { Close24 } from "@carbon/icons-react";
+import { Menu } from "@carbon/icons-react";
+import { Close } from "@carbon/icons-react";
 
 /* Nav
  *
@@ -12,14 +12,11 @@ const Nav = ({ items, linkComponent, className, children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   return (
     <nav className={className}>
-      <button
-        className="block ml-auto md:hidden"
-        onClick={() => setMenuOpen((isOpen) => !isOpen)}
-      >
+      <button className="block ml-auto md:hidden" onClick={() => setMenuOpen((isOpen) => !isOpen)}>
         {isMenuOpen ? (
-          <Close24 className="m-6 text-light-on-background-900" />
+          <Close size={24} className="m-6 text-light-on-background-900" />
         ) : (
-          <Menu24 className="m-6 text-light-on-background-900" />
+          <Menu size={24} className="m-6 text-light-on-background-900" />
         )}
       </button>
       <div

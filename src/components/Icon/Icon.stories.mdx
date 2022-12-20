@@ -15,23 +15,39 @@ Available icon sizes: **16px**, **20px**, **24px**, **32px**.
 These icons we currently use:
 
 export const IconsBridge = [
-  "Education32",
-  "TableOfContents32",
-  "Delivery32",
-  "Idea32",
-  "EventsAlt32",
-  "Forum32",
-  "Group32",
-  "ChartMarimekko32",
+  "Education",
+  "TableOfContents",
+  "Delivery",
+  "Idea",
+  "EventsAlt",
+  "Forum",
+  "Group",
+  "ChartMarimekko",
 ];
 
 <Canvas>
   <Story name="Default" parameters={{ design: { disable: true } }}>
     {IconsBridge.map((icon) => (
       <div className="inline-flex m-2" key={icon}>
-        <Icon name={icon} />{" "}
+        <Icon name={icon} size={32} />
       </div>
     ))}
+  </Story>
+  <Story name="Black&White" parameters={{ design: { disable: true } }}>
+    {IconsBridge.map((icon) => (
+      <div className="inline-flex m-2" key={icon}>
+        <Icon name={icon} size={32} className="bg-black text-white" />
+      </div>
+    ))}
+  </Story>
+  <Story name="Gray_style" parameters={{ design: { disable: true } }}>
+    <div className="bg-gray-900 p-10">
+      {IconsBridge.map((icon) => (
+        <div className="inline-flex m-2 " key={icon}>
+          <Icon name={icon} size={32} className="bg-gray-800 text-gray-100" />
+        </div>
+      ))}
+    </div>
   </Story>
 </Canvas>
 

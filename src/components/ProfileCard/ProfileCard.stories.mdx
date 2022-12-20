@@ -1,0 +1,32 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { config, withDesign } from "storybook-addon-designs";
+import ProfileCard from ".";
+
+<Meta title="Components/ProfileCard" decorators={[withDesign]} />
+
+## ProfileCard
+
+Bridge-the-gap best team displayed on this cards
+
+export const parameters = {
+  design: config({
+    type: "figma",
+    url: "https://www.figma.com/file/hmQZxeC57460iYOpa0PU8G/Bridge-the-gap-website?node-id=84%3A570&t=9onJEKCFApJDuU5p-0",
+  }),
+  controls: { disable: true },
+};
+
+<Canvas>
+  <Story name="Default" parameters={parameters}>
+    <ProfileCard
+      photoUrl="photo_6.png"
+      name="Irina (Samoylova) Illustrova"
+      role="Senior Frontend Engineer"
+      twitter="#"
+      linkedin="#"
+      github="#"
+    />
+  </Story>
+</Canvas>
+
+<ArgsTable of={ProfileCard} />

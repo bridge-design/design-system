@@ -1,7 +1,7 @@
 import { ArgsTable, Meta, Canvas, Story } from "@storybook/addon-docs";
 import { config } from "storybook-addon-designs";
 import Button from ".";
-import { ChevronRight24 } from '@carbon/icons-react';
+import { ChevronRight } from "@carbon/icons-react";
 
 <Meta title="Components/Button" />
 
@@ -11,54 +11,56 @@ Button component provides interfaces for all types of the buttons. Different typ
 buttons are coded as different components and imported here.
 
 <Canvas>
-<Story
+  <Story
     name="Default"
-    args={{ label: "Button", size: "small"}}
+    args={{ label: "Button", size: "small" }}
     argTypes={{
-      size: { options: ["small", "big"], control: {type: "select"} },
+      size: { options: ["small", "big"], control: { type: "select" } },
     }}
     parameters={{
       design: config({
         type: "figma",
         url: "https://www.figma.com/file/SrlAQ0JfpxPaI8awvXpqsH/GoRight-Website?node-id=210%3A47",
-      })
+      }),
     }}
   >
     {(args) => <Button {...args} />}
   </Story>
-  <Story
-    name="Small"
-    args={{ label: "Button"}}
-    parameters={{design: {disable: true}}}
-  >
+  <Story name="Small" args={{ label: "Button" }} parameters={{ design: { disable: true } }}>
     {(args) => <Button {...args} size="small" />}
   </Story>
-  <Story
-    name="Big"
-    args={{ label: "Button"}}
-    parameters={{design: {disable: true}}}
-  >
+  <Story name="Big" args={{ label: "Button" }} parameters={{ design: { disable: true } }}>
     {(args) => <Button {...args} size="big" />}
   </Story>
   <Story
     name="With Icon"
-    args={{ size: "small"}}
+    args={{ size: "small" }}
     argTypes={{
-      size: { options: ["small", "big"], control: {type: "select"} },
+      size: { options: ["small", "big"], control: { type: "select" } },
     }}
-    parameters={{design: {disable: true}}}
+    parameters={{ design: { disable: true } }}
   >
-    {(args) => <Button  {...args} >Send<ChevronRight24 className="ml-5"/></Button>}
+    {(args) => (
+      <Button {...args}>
+        Send
+        <ChevronRight size={24} className="ml-5" />
+      </Button>
+    )}
   </Story>
   <Story
     name="As Link"
-    args={{ label: "Button", href: "https://www.varya.me"}}
+    args={{ label: "Button", href: "https://www.varya.me" }}
     argTypes={{
-      size: { options: ["small", "big"], control: {type: "select"} },
+      size: { options: ["small", "big"], control: { type: "select" } },
     }}
-    parameters={{design: {disable: true}}}
+    parameters={{ design: { disable: true } }}
   >
-    {(args) => <Button  {...args} >Send<ChevronRight24 className="ml-5"/></Button>}
+    {(args) => (
+      <Button {...args}>
+        Send
+        <ChevronRight size={24} className="ml-5" />
+      </Button>
+    )}
   </Story>
 </Canvas>
 

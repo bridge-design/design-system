@@ -97,7 +97,7 @@ function Testimonial({ testimonials, title }) {
   return (
     <>
       <div>
-        <div className="flex items-baseline justify-between pb-4">
+        <div className="flex items-baseline justify-between">
           <div className="flex items-start">{title}</div>
           <div className="hidden ml-auto md:flex">
             <button
@@ -115,7 +115,7 @@ function Testimonial({ testimonials, title }) {
           </div>
         </div>
 
-        <div ref={swiperContainerRef} className="mt-16 swiper-container">
+        <div ref={swiperContainerRef} className="mt-10 swiper-container">
           <div
             className="flex transition-transform swiper-wrapper ease-out-back" // do not remve swiper-wrapper
           >

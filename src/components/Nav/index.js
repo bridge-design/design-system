@@ -12,7 +12,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   return (
     <nav className={className}>
-      <button className="block ml-auto md:hidden" onClick={() => setMenuOpen((isOpen) => !isOpen)}>
+      <button className="block ml-auto lg:hidden" onClick={() => setMenuOpen((isOpen) => !isOpen)}>
         {isMenuOpen ? (
           <Close size={24} className="m-6 text-light-on-background-900" />
         ) : (
@@ -23,7 +23,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
         className={
           isMenuOpen
             ? "flex flex-col absolute z-50 top-full w-full bg-white left-0 right-0 p-20"
-            : "hidden md:flex relative"
+            : "hidden lg:flex relative"
         }
       >
         <ul className="flex flex-col justify-between w-full text-center list-none bg-light-background-900 md:inline-flex md:flex-row text-light-on-background-900 dark:text-dark-on-background-900">

@@ -21,3 +21,5 @@ export { default as Nav } from "./components/Nav";
 export { default as Testimonial } from "./components/Testimonial";
 export { default as Text } from "./components/Text";
 export { default as Timetable } from "./components/Timetable";
+export { default as Advantages } from "./components/Advantages";
+export { default as ProfileCard } from "./components/ProfileCard";

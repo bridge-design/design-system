@@ -37,3 +37,9 @@ Release via Github actions
 
 - To skip CI jobs, add to commit message keyword `[skip-ci]` (with brackets)
 - You can run yarn semantic-release` locally to check for version and changelog. However make sure that the branch you are on has a remote, otherwise semantic release will fail.
+
+## npmjs release library
+
+- `npm login` - login into your own account npmjs.
+- `yarn build` - bundles the library and all packages in the project to a single package.
+- `yarn publish` - publishes a package to the npm registry. Once a package is published, you can never modify that specific version, so take care before publishing.

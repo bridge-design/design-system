@@ -16,6 +16,7 @@ export { default as Button } from "./components/Button";
 export { default as Card } from "./components/Card";
 export { default as CtaLink } from "./components/CtaLink";
 export { default as Emoji } from "./components/Emoji";
+export { default as HelpTeams } from "./components/HelpTeams";
 export { default as Icon } from "./components/Icon";
 export { default as Logo } from "./components/Logo";
 export { default as Nav } from "./components/Nav";

@@ -11,7 +11,7 @@ import classNames from "classnames";
  * description of the benefits of working with an additional team
  */
 
-const HelpTeams = ({ className }) => {
+const HelpTeams = ({ className, photoUrl }) => {
   return (
     <div className={classNames("flex justify-between items-center gap-14", className)}>
       <div className="flex flex-col">
@@ -41,17 +41,14 @@ const HelpTeams = ({ className }) => {
           Start a conversation
         </CtaLink>
       </div>
-      <img
-        src="rectangle_14.png"
-        alt="team work"
-        className="w-full h-auto max-w-[678px] object-contain"
-      />
+      <img src={photoUrl} alt="team work" className="w-full h-auto max-w-[678px] object-contain" />
     </div>
   );
 };
 
 HelpTeams.propTypes = {
   className: PropTypes.string,
+  photoUrl: PropTypes.string,
 };
 
 export default React.memo(HelpTeams);

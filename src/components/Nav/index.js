@@ -26,7 +26,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
             : "hidden lg:flex relative"
         }
       >
-        <ul className="flex flex-col justify-between w-full text-center list-none bg-light-background-900 md:inline-flex md:flex-row text-light-on-background-900 dark:text-dark-on-background-900">
+        <ul className="flex flex-col justify-between w-full text-center list-none md:inline-flex md:flex-row text-light-on-background-900">
           {items &&
             items.map((item) => (
               <li key={item.href} className="px-2 py-6 md:py-0">

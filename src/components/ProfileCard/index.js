@@ -5,8 +5,12 @@ import { LogoTwitter, LogoLinkedin, LogoGithub } from "@carbon/icons-react";
 
 const ProfileCard = ({ photoUrl, name, role, twitter, linkedin, github }) => {
   return (
-    <div className="flex items-start flex-col lg:flex-row rounded-[4px] bg-light-on-background-200 lg:max-w-[657px] lg:max-h-[342px] max-w-[306px]">
-      <img src={photoUrl} alt={name} className="rounded-l-[4px] max-w-full h-auto object-contain" />
+    <div className="flex items-start flex-col lg:flex-row rounded-[4px] bg-light-on-background-200 lg:max-w-[657px] lg:max-h-[342px] max-w-[306px] overflow-hidden">
+      <img
+        src={photoUrl}
+        alt={name}
+        className="rounded-l-[4px] max-w-[306px] w-full h-auto object-contain"
+      />
       <div className="flex flex-col justify-between w-full h-full px-4 py-4 lg:px-10 lg:py-20">
         <Text variant="2xl" className="mb-2">
           {name}

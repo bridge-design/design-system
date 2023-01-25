@@ -10,6 +10,7 @@ import { Close } from "@carbon/icons-react";
  */
 const Nav = ({ items, linkComponent, className, children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className={className}>
       <button className="block ml-auto lg:hidden" onClick={() => setMenuOpen((isOpen) => !isOpen)}>
@@ -22,19 +23,19 @@ const Nav = ({ items, linkComponent, className, children }) => {
       <div
         className={
           isMenuOpen
-            ? "flex flex-col absolute z-50 top-full w-full bg-white left-0 right-0 p-20"
+            ? "flex flex-col absolute z-50 top-24 bg-white left-0 right-0 p-20"
             : "hidden lg:flex relative"
         }
       >
         <ul className="flex flex-col justify-between w-full text-center list-none md:inline-flex md:flex-row text-light-on-background-900">
           {items &&
             items.map((item) => (
-              <li key={item.href} className="px-2 py-6 md:py-0">
+              <li key={item.href} className="px-2 py-2 md:py-0">
                 <Text
-                  variant="2Xl"
+                  variant="xl"
                   as={linkComponent || "a"}
                   href={item.href}
-                  className="border-gray-900 hover:border-b-2"
+                  className="border-gray-900 hover:border-b-2 font-xlMedium"
                 >
                   {item.name}
                 </Text>

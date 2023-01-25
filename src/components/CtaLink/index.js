@@ -19,19 +19,12 @@ const CtaLink = ({
   ...props
 }) => {
   const classes = classnames(
-    "cursor-pointer text-primary-500 hover:text-primary-700 inline-flex items-center group bg-no-repeat",
+    "cursor-pointer text-primary-500 hover:text-primary-700 inline-flex items-center group bg-no-repeat text-xlMedium font-xlMedium tracking-xlMedium leading-xlMedium",
     className
-  )
+  );
 
   return (
-    <Text
-      as={as}
-      href={to}
-      variant="lgBolder"
-      className={classes}
-      ref={ref}
-      {...props}
-    >
+    <Text as={as} href={to} variant="xlMedium" className={classes} ref={ref} {...props}>
       {arrow === "start" && (
         <span
           key="start"
@@ -40,7 +33,14 @@ const CtaLink = ({
           ←{"\u2004"}
         </span>
       )}
-      <span key="body" className={underline ? `border-b pb-4 border-primary-500 hover:border-primary-700 ${borderClassName}` : "no"}>
+      <span
+        key="body"
+        className={
+          underline
+            ? `border-b-2 pb-3 border-primary-500 hover:border-primary-700 ${borderClassName}`
+            : "no"
+        }
+      >
         {children}
       </span>
       {arrow === "end" && (

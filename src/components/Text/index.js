@@ -23,18 +23,22 @@ const Text = ({
     "5xl": "text-5Xl font-5Xl tracking-5Xl leading-5Xl",
     "4xl": "text-4Xl font-4Xl tracking-4Xl leading-4Xl",
     "3xl": "text-3Xl font-3Xl tracking-3Xl leading-3Xl",
+    "3XlBold": "font-3XlBold",
     "2xl": "text-2Xl font-2Xl tracking-2Xl leading-2Xl",
+    "2XlMedium": "text-2XlMedium font-2XlMedium tracking leading",
     xl: "text-xl font-xl tracking-xl leading-xl",
-    xlbolder: "text-xlBolder font-xlBolder tracking-xlBolder leading-xlBolder",
+    xlMedium: "text-xlMedium font-xlMedium tracking-xlMedium leading-xlMedium",
     lg: "text-lg font-lg tracking-lg leading-lg",
-    lgbolder: "text-lgBolder font-lgBolder tracking-lgBolder leading-lgBolder",
+    lgItalic: "text-lgItalic font-lgItalic tracking-lgItalic leading-lgItalic",
+    lgMedium: "text-lgMedium font-lgMedium tracking-lgMedium leading-lgMedium",
+    lgMediumItalic:
+      "text-lgMediumItalic font-lgMediumItalic tracking-lgMediumItalic leading-lgMediumItalic ",
     base: "text-base font-base tracking-base leading-base",
-    basebolder:
-      "text-baseBolder font-baseBolder tracking-baseBolder leading-baseBolder",
+    baseMedium: "text-baseMedium font-baseMedium tracking-baseMedium leading-baseMedium",
     sm: "text-sm font-sm tracking-sm leading-sm",
-    smbolder: "text-smBolder font-smBolder tracking-smBolder leading-smBolder",
+    smMedium: "text-smMedium font-smMedium tracking-smMedium leading-smMedium",
     xs: "text-xs font-xs tracking-xs leading-xs",
-    xsbolder: "text-xsBolder font-xsBolder tracking-xsBolder leading-xsBolder",
+    xsMedium: "text-xsMedium font-xsMedium tracking-xsMedium leading-xsMedium",
   };
 
   const responsiveClasses = responsive
@@ -52,11 +56,7 @@ const Text = ({
 
   return (
     <Component
-      className={classnames(
-        variants[variant.toLowerCase()],
-        responsiveClasses,
-        className
-      )}
+      className={classnames(variants[variant.toLowerCase()], responsiveClasses, className)}
       {...props}
     >
       {children}

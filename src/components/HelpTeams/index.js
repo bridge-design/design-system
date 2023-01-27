@@ -13,11 +13,21 @@ import classNames from "classnames";
 
 const HelpTeams = ({ className, photoUrl }) => {
   return (
-    <div className={classNames("flex justify-between items-center gap-14", className)}>
+    <div
+      className={classNames(
+        "flex flex-col-reverse md:flex-row justify-between items-start gap-14",
+        className
+      )}
+    >
       <div className="flex flex-col">
-        <Text variant="3xl" className="mb-4">
+        <Text variant="4xl" className="mb-8">
           Help for busy teams
         </Text>
+        <img
+          src={photoUrl}
+          alt="team work"
+          className="w-full mx-auto mb-6 h-auto max-w-[678px] object-contain md:hidden block"
+        />
         <Text variant="lg" className="">
           Hiring an agency brings additional expertise and knowledge to your business. To complete
           the tasks outside of your in-house skillset, it may require team training or additional
@@ -37,11 +47,15 @@ const HelpTeams = ({ className, photoUrl }) => {
             <Text variant="lg">Continous integration and deveployment</Text>
           </div>
         </div>
-        <CtaLink href="/contact" underline className="text-xl animate-fadeindelay">
+        <CtaLink href="/contact" underline className="text-xl animate-fadeindelay justify-self-end">
           Start a conversation
         </CtaLink>
       </div>
-      <img src={photoUrl} alt="team work" className="w-full h-auto max-w-[678px] object-contain" />
+      <img
+        src={photoUrl}
+        alt="team work"
+        className="w-[45%] h-auto max-w-[678px] object-contain hidden md:block"
+      />
     </div>
   );
 };

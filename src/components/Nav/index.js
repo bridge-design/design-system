@@ -32,10 +32,10 @@ const Nav = ({ items, linkComponent, className, children }) => {
             items.map((item) => (
               <li key={item.href} className="px-2 py-2 md:py-0">
                 <Text
-                  variant="xl"
+                  variant="xlMedium"
                   as={linkComponent || "a"}
                   href={item.href}
-                  className="border-gray-900 hover:border-b-2 font-xlMedium"
+                  className="border-gray-900 hover:border-b-2 text-xlMedium font-xlMedium tracking-xlMedium leading-xlMedium"
                 >
                   {item.name}
                 </Text>

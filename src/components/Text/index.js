@@ -8,7 +8,7 @@ import { getBreakpoints } from "../../utils/getTheme";
  * Any text block
  */
 const Text = ({
-  variant = "base",
+  variant = "2XlMedium",
   children,
   as: Component = "p",
   className,
@@ -23,22 +23,24 @@ const Text = ({
     "5xl": "text-5Xl font-5Xl tracking-5Xl leading-5Xl",
     "4xl": "text-4Xl font-4Xl tracking-4Xl leading-4Xl",
     "3xl": "text-3Xl font-3Xl tracking-3Xl leading-3Xl",
-    "3XlBold": "text-3XlBold font-3XlBold tracking-3XlBold leading-3XlBold",
+    "3xlbold": "text-3XlBold font-3XlBold tracking-3XlBold leading-3XlBold",
     "2xl": "text-2Xl font-2Xl tracking-2Xl leading-2Xl",
-    "2XlMedium": "text-2XlMedium font-2XlMedium tracking-2XlMedium leading-2XlMedium",
+    "2xlmedium": "text-2XlMedium font-2XlMedium tracking-2XlMedium leading-2XlMedium",
     xl: "text-xl font-xl tracking-xl leading-xl",
-    xlMedium: "text-xlMedium font-xlMedium tracking-xlMedium leading-xlMedium",
+    xlmedium: "text-xlMedium font-xlMedium tracking-xlMedium leading-xlMedium",
     lg: "text-lg font-lg tracking-lg leading-lg",
-    lgItalic: "text-lgItalic font-lgItalic tracking-lgItalic leading-lgItalic",
-    lgMedium: "text-lgMedium font-lgMedium tracking-lgMedium leading-lgMedium",
-    lgMediumItalic:
+    lgitalic: "text-lgItalic font-lgItalic tracking-lgItalic leading-lgItalic",
+    lgmedium: "text-lgMedium font-lgMedium tracking-lgMedium leading-lgMedium",
+    lgmediumitalic:
       "text-lgMediumItalic font-lgMediumItalic tracking-lgMediumItalic leading-lgMediumItalic ",
+    md: "text-md font-md tracking-md leading-md",
+    mdMedium: "text-mdMedium font-mdMedium tracking-mdMedium leading-mdMedium",
     base: "text-base font-base tracking-base leading-base",
-    baseMedium: "text-baseMedium font-baseMedium tracking-baseMedium leading-baseMedium",
+    basemedium: "text-baseMedium font-baseMedium tracking-baseMedium leading-baseMedium",
     sm: "text-sm font-sm tracking-sm leading-sm",
-    smMedium: "text-smMedium font-smMedium tracking-smMedium leading-smMedium",
+    smmedium: "text-smMedium font-smMedium tracking-smMedium leading-smMedium",
     xs: "text-xs font-xs tracking-xs leading-xs",
-    xsMedium: "text-xsMedium font-xsMedium tracking-xsMedium leading-xsMedium",
+    xsmedium: "text-xsMedium font-xsMedium tracking-xsMedium leading-xsMedium",
   };
 
   const responsiveClasses = responsive
@@ -53,6 +55,10 @@ const Text = ({
         )
         .join(" ")
     : "";
+
+  if (!variant) {
+    return null;
+  }
 
   return (
     <Component

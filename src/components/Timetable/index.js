@@ -12,7 +12,7 @@ const Timetable = ({ data, header, className }) => {
     data && (
       <Text
         as="table"
-        variant="xlBolder"
+        variant="xlMedium"
         className={classnames(
           "text-light-on-background-900 table-auto",
           className
@@ -22,7 +22,7 @@ const Timetable = ({ data, header, className }) => {
           <Text
             as="caption"
             variant="2Xl"
-            responsive={{ md: "4Xl" }}
+            responsive={{ sm: "smMedium" }}
             className="mb-2 text-left md:mb-5"
           >
             {header}
@@ -37,8 +37,8 @@ const Timetable = ({ data, header, className }) => {
               <td className="pr-2 text-left sm:pr-4 w-30 sm:w-64 ">
                 <Text
                   as="span"
-                  variant="xsBolder"
-                  responsive={{ sm: "smBolder" }}
+                  variant="xsMedium"
+                  responsive={{ sm: "smMedium" }}
                   className={`${row.color} text-light-on-background-50 p-1 sm:whitespace-nowrap`}
                 >
                   {row.time}
@@ -47,8 +47,8 @@ const Timetable = ({ data, header, className }) => {
               <td className="w-1/2 px-2 overflow-hidden text-left sm:px-4 overflow-ellipsis">
                 <Text
                   as="span"
-                  responsive={{ sm: "lgBolder", md: "xlBolder" }}
-                  variant="baseBolder"
+                  responsive={{ sm: "smMedium" }}
+                  variant="baseMedium"
                 >
                   {row.name}
                 </Text>
@@ -56,8 +56,8 @@ const Timetable = ({ data, header, className }) => {
               <td className="w-1/2 pl-2 overflow-hidden text-left sm:pl-4 overflow-ellipsis">
                 <Text
                   as="span"
-                  responsive={{ sm: "lgBolder", md: "xlBolder" }}
-                  variant="baseBolder"
+                  responsive={{ sm: "smMedium" }}
+                  variant="baseMedium"
                 >
                   {row.description}
                 </Text>

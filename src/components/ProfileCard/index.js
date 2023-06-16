@@ -4,6 +4,7 @@ import Text from "../Text";
 import { LogoTwitter, LogoLinkedin, LogoGithub } from "@carbon/icons-react";
 
 const ProfileCard = ({ photoUrl, name, role, description, twitter, linkedin, github, reverse }) => {
+  let isDescription = description === undefined ;
   return (
     <div
       className={`flex items-start flex-col rounded-[4px] bg-light-on-background-200 lg:max-h-[342px] max-w-min lg:max-w-full overflow-hidden justify-between ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"
@@ -25,12 +26,12 @@ const ProfileCard = ({ photoUrl, name, role, description, twitter, linkedin, git
           {role}
         </Text>
         <div className="flex flex-col justify-between flex-1">
-          {description === undefined ? null :
+          {isDescription ? null :
             <Text variant="base" className="flex-1">
               {description}
             </Text>
           }
-          <div className="flex justify-center gap-[10%] justify-self-end lg:justify-start">
+          <div className={`flex ${isDescription ? "justify-start lg:gap-[5%] " : "justify-center"} gap-[10%] justify-self-end lg:justify-start`}>
             <a href={twitter}>
               <LogoTwitter size={32} />
             </a>

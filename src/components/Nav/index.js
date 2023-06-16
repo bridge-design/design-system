@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Text from "../Text";
 import { Menu } from "@carbon/icons-react";
 import { Close } from "@carbon/icons-react";
@@ -11,11 +11,38 @@ import { Close } from "@carbon/icons-react";
 const Nav = ({ items, linkComponent, className, children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    //обработчик закрытия попапов по нажатия на ESC и overlay
+    const handleEscClose = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    const handleCloseByOverlay = (evt) => {
+      //обработчик для закртия popup по кнопке и overlay
+      if (
+        evt.target.classList.contains("isOpen") ||
+        evt.target.classList.contains("close-nav")
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleCloseByOverlay);
+    document.addEventListener("keydown", handleEscClose);
+
+    return () => {
+      document.removeEventListener("click", handleCloseByOverlay);
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, []);
+
   return (
     <nav className={className}>
       <button className="block ml-auto lg:hidden" onClick={() => setMenuOpen((isOpen) => !isOpen)}>
         {isMenuOpen ? (
-          <Close size={24} className="m-6 text-light-on-background-900" />
+          <Close size={24} className="m-6 text-light-on-background-900 close-nav" />
         ) : (
           <Menu size={24} className="m-6 text-light-on-background-900" />
         )}
@@ -23,14 +50,14 @@ const Nav = ({ items, linkComponent, className, children }) => {
       <div
         className={
           isMenuOpen
-            ? "flex flex-col absolute z-50 top-24 bg-white left-0 right-0 p-20"
+            ? "flex flex-col absolute z-50 top-24 bg-white left-0 right-0 p-20 isOpen"
             : "hidden lg:flex relative"
         }
       >
         <ul className="flex flex-col justify-end w-full gap-10 text-center list-none md:inline-flex md:flex-row text-light-on-background-900">
           {items &&
             items.map((item) => (
-              <li key={item.href} className="px-2 py-2 md:py-0">
+              <li key={item.href} className="px-2 py-2 md:py-0" onClick={() => setMenuOpen(false)}>
                 <Text
                   variant="xlMedium"
                   as={linkComponent || "a"}

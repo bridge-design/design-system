@@ -22,8 +22,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
     const handleCloseByOverlay = (evt) => {
       //обработчик для закртия popup по кнопке и overlay
       if (
-        evt.target.classList.contains("isOpen") ||
-        evt.target.classList.contains("close-nav")
+        evt.target.classList.contains("isOpen")
       ) {
         setMenuOpen(false);
       }
@@ -42,7 +41,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
     <nav className={className}>
       <button className="block ml-auto lg:hidden" onClick={() => setMenuOpen((isOpen) => !isOpen)}>
         {isMenuOpen ? (
-          <Close size={24} className="m-6 text-light-on-background-900 close-nav" />
+          <Close size={24} className="m-6 text-light-on-background-900" />
         ) : (
           <Menu size={24} className="m-6 text-light-on-background-900" />
         )}

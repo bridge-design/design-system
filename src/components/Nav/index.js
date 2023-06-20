@@ -12,27 +12,15 @@ const Nav = ({ items, linkComponent, className, children }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    //обработчик закрытия попапов по нажатия на ESC и overlay
+    //The navigation closing handler by pressing ESC btn
     const handleEscClose = (event) => {
       if (event.key === "Escape") {
         setMenuOpen(false);
       }
     };
 
-    const handleCloseByOverlay = (evt) => {
-      //обработчик для закртия popup по кнопке и overlay
-      if (
-        evt.target.classList.contains("isOpen")
-      ) {
-        setMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("click", handleCloseByOverlay);
     document.addEventListener("keydown", handleEscClose);
-
     return () => {
-      document.removeEventListener("click", handleCloseByOverlay);
       document.removeEventListener("keydown", handleEscClose);
     };
   }, []);
@@ -56,7 +44,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
         <ul className="flex flex-col justify-end w-full gap-10 text-center list-none md:inline-flex md:flex-row text-light-on-background-900">
           {items &&
             items.map((item) => (
-              <li key={item.href} className="px-2 py-2 md:py-0" onClick={() => setMenuOpen(false)}>
+              <li key={item.href} className="px-2 py-2 md:py-0" onClick={() => setTimeout(() => { setMenuOpen(false) }, 600)}>
                 <Text
                   variant="xlMedium"
                   as={linkComponent || "a"}

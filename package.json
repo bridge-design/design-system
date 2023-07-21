@@ -9,7 +9,7 @@
   "scripts": {
     "start": "yarn tokens && storybook dev -p .storybook/public -p 6006",
     "build": "webpack --mode=production",
-    "storybook build": "storybook build -s .storybook/public",
+    "storybook build": "storybook build .storybook/public",
     "storybook:deploy": "gh-pages -d storybook-static",
     "add-component": "node .add-component/index.js",
     "tokens": "style-dictionary build --config ./src/tokens/config.js",
@@ -27,7 +27,6 @@
     "@storybook/addon-essentials": "7.0.26",
     "@storybook/addon-postcss": "latest",
     "@storybook/blocks": "^7.1.0",
-    "@storybook/cli": "7.0.26",
     "@storybook/react": "7.0.26",
     "@storybook/react-webpack5": "^7.1.0",
     "@storybook/storybook-deployer": "^2.8.16",
@@ -75,6 +74,7 @@
     "prop-types": "^15.8.1",
     "react": "17",
     "react-dom": "17",
+    "string-width": "^6.1.0",
     "swiper": "^10.0.4",
     "tailwindcss": "^3.3.2",
     "use-debounce": "^9.0.4"

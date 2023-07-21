@@ -49,7 +49,7 @@ const config = {
     config.module.rules.push({
       test: /\.svg$/,
       include: path.resolve(__dirname, "../src/components/"),
-      use: ["@svgr/webpack', 'file-loader"],
+      use: ["@svgr/webpack", "file-loader"],
     });
 
     // fonts

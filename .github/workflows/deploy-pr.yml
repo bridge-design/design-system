@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2-beta
         with:
-          node-version: "14"
+          node-version: "18"
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -41,7 +41,7 @@ jobs:
           
       - name: Build Storybook
         run: |
-          yarn storybook:build
+          yarn storybook build
           
       - name: Deploy Storybook
         uses: JamesIves/github-pages-deploy-action@4.1.0

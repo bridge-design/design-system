@@ -1,27 +1,18 @@
-import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
-import { config, withDesign } from "storybook-addon-designs";
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
 
 import Badge from ".";
 
-<Meta title="Components/Badge" decorators={[withDesign]} />
+<Meta title="Components/Badge" />
 
 ## Badge
 
 A label describing the role of workshop participants (usually designer/developer)
 
-export const parameters = {
-  design: config({
-    type: "figma",
-    url: "https://www.figma.com/file/SrlAQ0JfpxPaI8awvXpqsH/GoRight-Website?node-id=209%3A257",
-  }),
-  controls: { disable: true },
-};
-
 <Canvas>
-  <Story name="Designer" parameters={parameters}>
+  <Story name="Designer">
     <Badge role="designer" />
   </Story>
-  <Story name="Developer" parameters={parameters}>
+  <Story name="Developer">
     <Badge role="developer" />
   </Story>
 </Canvas>

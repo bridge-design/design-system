@@ -3,7 +3,8 @@ import Text from "../Text";
 import classnames from "classnames";
 import { ArrowRight, ArrowLeft } from "@carbon/icons-react";
 import React, { useLayoutEffect, useRef, useState, useCallback } from "react";
-import { Swiper, Scrollbar, Navigation } from "swiper/core";
+import Swiper from 'swiper';
+import { Scrollbar, Navigation } from "swiper/modules";
 import { useDebouncedCallback } from "use-debounce";
 import { ReactComponent as QuotationIcon } from "./quotation-icon.svg";
 

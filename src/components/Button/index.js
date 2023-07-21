@@ -6,6 +6,7 @@
 import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
+
 const sizes = {
   small:
     "py-2 px-4 text-base text-baseBolder font-baseBolder tracking-baseBolder leading-baseBolder rounded-md",

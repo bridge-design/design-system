@@ -1,12 +1,12 @@
-const path = require("path");
-const pathToInlineSvg = path.resolve(__dirname, "../src/components/");
-const webpack = require("webpack");
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
 
-const tokensFileName = "design-tokens.json";
-const tokensPath = "./src/tokens/";
+const path = require('path');
 
-module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.js"],
+const config = {
+  core: {
+    builder: "@storybook/builder-webpack5"
+  },
+  stories: ["../src/**/*.stories.mdx"],
   addons: [
     "@storybook/addon-essentials",
     {
@@ -17,42 +17,39 @@ module.exports = {
         },
       },
     },
-    "storybook-addon-designs",
-    "creevey",
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        jsxOptions: {},
+        csfPluginOptions: null,
+        mdxPluginOptions: {},
+        transcludeMarkdown: true,
+      },
+    },
+    'creevey',
   ],
-  staticDirs: ["../public"],
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
+  },
   webpackFinal: async (config) => {
     // use @babel/preset-react for JSX and env (instead of staged presets)
-    config.module.rules[0].use[0].options.presets = [
-      require.resolve("@babel/preset-react"),
-      require.resolve("@babel/preset-env"),
-    ];
+    const babelLoader = config.module.rules.find((rule) =>
+      rule.use && rule.use.some((loader) => loader.loader === "babel-loader")
+    );
+    if (babelLoader) {
+      babelLoader.use[0].options.presets.push(require.resolve("@babel/preset-react"));
+      babelLoader.use[0].options.presets.push(require.resolve("@babel/preset-env"));
+    }
 
     // SVGR
-    const rules = config.module.rules;
-    // modify storybook's file-loader rule to avoid conflicts with svgr
-    const fileLoaderRule = rules.find((rule) => {
-      return rule && rule.test ? rule.test.test(".svg") : false;
-    });
+    const svgRule = config.module.rules.find((rule) => rule.test && rule.test.test(".svg"));
+    svgRule.exclude = path.resolve(__dirname, "../src/components/");
 
-    fileLoaderRule.exclude = pathToInlineSvg;
-
-    rules.push({
+    config.module.rules.push({
       test: /\.svg$/,
-      include: pathToInlineSvg,
-      use: [
-        {
-          loader: "@svgr/webpack",
-          options: {
-            svgoConfig: {
-              plugins: {
-                removeViewBox: false,
-              },
-            },
-          },
-        },
-        "file-loader",
-      ],
+      include: path.resolve(__dirname, "../src/components/"),
+      use: ["@svgr/webpack', 'file-loader"],
     });
 
     // fonts
@@ -61,43 +58,46 @@ module.exports = {
       use: [
         {
           loader: "file-loader",
-          query: {
+          options: {
             name: "[name].[ext]",
           },
         },
       ],
-      include: path.resolve(__dirname, "public"),
+      include: path.resolve(__dirname, "./public"),
     });
 
-    /*
-     * Add plugin which adds design-tokens source file to watch scope
-     */
-    config.plugins.push({
-      apply: (compiler) => {
-        compiler.hooks.beforeCompile.tap("WatchTokensSource", (params) => {
-          params.compilationDependencies.add(path.resolve(__dirname, tokensFileName));
-        });
-      },
-    });
+    // Add plugin which adds design-tokens source file to watch scope
+    const { WatchIgnorePlugin } = require("webpack");
+    config.plugins.push(
+      new WatchIgnorePlugin({
+        paths: [path.resolve(__dirname, "../src/tokens/design-tokens.json")],
+      })
+    );
 
-    /*
-     * Add plugin which detects if design-token file was invalidated and rebuilds tokens
-     */
-    config.plugins.push({
-      apply: (compiler) => {
-        compiler.hooks.invalid.tap("RebuildTokens", (fn) => {
-          const StyleDictionary = require("style-dictionary").extend(`${tokensPath}/config.js`);
+    // Rebuild tokens when the design-tokens file changes
+    const StyleDictionary = require("style-dictionary");
+    const tokensConfigPath = path.resolve(__dirname, "../src/tokens/config.js");
 
-          if (/design-tokens.json$/.test(fn)) {
-            // StyleDictionary.extend("./.tokens/config.js");
-            StyleDictionary.buildPlatform("js");
-          }
-        });
-      },
-    });
-    config.node = {
-      fs: "empty",
+    const rebuildTokens = () => {
+      StyleDictionary.extend(tokensConfigPath).buildPlatform("js");
     };
+
+    const designTokensPath = path.resolve(__dirname, "../src/tokens/design-tokens.json'");
+    config.watchOptions = {
+      ignored: [designTokensPath],
+    };
+
+    const chokidar = require('chokidar');
+    chokidar.watch(designTokensPath).on('change', rebuildTokens);
+
+    rebuildTokens();
+
     return config;
   },
+  docs: {
+    autodocs: "tag",
+  },
+  staticDirs: ['./public'],
 };
+
+export default config;

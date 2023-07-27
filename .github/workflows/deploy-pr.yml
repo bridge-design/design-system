@@ -40,6 +40,8 @@ jobs:
           yarn tokens
           
       - name: Build Storybook
+        env:
+          BASE_URL: "/pr:${{ github.event.number }}"
         run: |
           yarn storybook build
           

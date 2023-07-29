@@ -12,6 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Delete yarn.lock
+        run: rm yarn.lock
+        
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:

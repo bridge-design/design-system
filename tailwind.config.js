@@ -1,11 +1,10 @@
-// import fastCartesian from "fast-cartesian";
+import fastCartesian from "fast-cartesian";
 const resolveConfig = require("tailwindcss/resolveConfig");
 
 const colors = require("./src/tokens/dist/colors.json");
 const typography = require("./src/tokens/dist/typography.json");
 const defaultTheme = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
-const fastCartesian = require("fast-cartesian");
 
 const typographyProps = [
   "fontSize",
@@ -46,20 +45,12 @@ const generateHighlights = (theme) => {
   return generateColors(theme("colors"), "highlight");
 };
 
-// Takes array with n arrays of strings. returns generated combinations
 const generateSafelistEntries = (...arrays) => {
   return fastCartesian(arrays).map((arr) => arr.join(""));
 };
 
 const conf = {
-  mode: "jit",
-
-  purge: {
-    // enabled: true,
-    // mode: "all",
-    safelist: [...require("./tailwind.safelist")],
-    content: ["./src/**/*.{js,jsx,md,mdx, txt}"],
-  },
+  content: ["./src/**/*.{js,jsx,md,mdx, txt}"],
   theme: {
     fontSize: { ...typography.fontSize },
     fontWeight: { ...typography.fontWeight },
@@ -85,7 +76,7 @@ const conf = {
         ...colors,
       },
       backgroundImage: (theme) => generateHighlights(theme),
-      // This values are needed to position highlight according font size.
+            // This values are needed to position highlight according font size.
       backgroundPosition: {
         "9Xl": "0 -24px",
         "8Xl": "0 -16px",
@@ -211,17 +202,8 @@ const conf = {
           style: "italic",
           weight: 500,
           display: "swap",
-        },
-        // {
-        //   filename: "NeueMontreal Regular ",
-        // },
+        }
       ],
-    },
-  },
-  variants: {
-    extend: {
-      translate: ["group-hover"],
-      backgroundImage: ["hover"],
     },
   },
   plugins: [
@@ -244,9 +226,10 @@ const fullTheme = resolveConfig(conf).theme;
 const variants = Object.keys(typography.fontSize); // get all variant names from one of the tokens
 const screens = Object.keys(fullTheme.screens);
 
-conf.purge.safelist = [
-  // load custom classes from file
-  ...conf.purge.safelist,
+conf.content.content = ["./src/**/*.{js,jsx,md,mdx,txt}"];
+// load custom classes from file
+conf.content.safelist = [
+  ...require("./tailwind.safelist"),
   // generate classnames for responsive typography
   ...generateSafelistEntries(
     screens,
@@ -255,18 +238,18 @@ conf.purge.safelist = [
     ["-"],
     variants
   ),
-  // generate classnames for "bg-highlight-*" classes
+    // generate classnames for "bg-highlight-*" classes
   ...generateSafelistEntries(
     ["bg-highlight-"],
     ["primary", "yellow", "red", "green", "pink"], // not all the colors because unikely to be used
     ["-"],
     ["50", "100", "200"]
   ),
-  // generate classnames for "bg-{variant}" classes
+   // generate classnames for "bg-{variant}" classes
   ...generateSafelistEntries(["bg-"], variants),
   // generate classnames for "bg-{variant}" responsive classes
   ...generateSafelistEntries(screens, [":"], ["bg-"], variants),
-  // generate classnames for responsive variants
+    // generate classnames for responsive variants
   ...generateSafelistEntries(
     screens,
     [":"],
@@ -277,4 +260,4 @@ conf.purge.safelist = [
   ),
 ];
 
-module.exports = conf;
+export default conf;

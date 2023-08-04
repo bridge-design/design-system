@@ -1,5 +1,5 @@
-import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
-import { config, withDesign } from "storybook-addon-designs";
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/blocks";
+import ProfileCard from "../ProfileCard";
 
 import Advantages from ".";
 
@@ -18,13 +18,13 @@ export const CONTENT = [
   },
   {
     icon: "UserIdentification",
-    title: "5× Faster",
+    title: "7× Faster",
     description:
       "Reusing the same design and development components and patterns from a design system library. allows all organizational teams to create, test, and launch products more quickly.",
   },
   {
     icon: "Rocket",
-    title: "Coherent",
+    title: "Consistent",
     description:
       "Ensuring that your company's identity and the experience it provides for customers is consistent across the board for all of your digital products.",
   },
@@ -36,25 +36,17 @@ export const CONTENT = [
   },
 ];
 
-<Meta title="Components/Advantages" decorators={[withDesign]} />
+<Meta title="Components/Advantages" />
 
 ## Advantages
 
 Three columns with best advantages of design-system for teams and enterprises
 
-export const parameters = {
-  design: config({
-    type: "figma",
-    url: "https://www.figma.com/file/hmQZxeC57460iYOpa0PU8G/Bridge-the-gap-website?node-id=84%3A570&t=0AON8HXv6mYvJgqR-0",
-  }),
-  controls: { disable: true },
-};
-
 <Canvas>
-  <Story name="Dark" parameters={parameters}>
+  <Story name="Dark">
     <Advantages colorSchema="dark" content={CONTENT.slice(2)} />
   </Story>
-  <Story name="Light" parameters={parameters}>
+  <Story name="Light">
     <Advantages colorSchema="light" content={CONTENT} />
   </Story>
 </Canvas>

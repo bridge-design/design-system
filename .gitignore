@@ -2,7 +2,9 @@ src/tokens/dist
 node_modules
 tests/report
 !tests/report/README.md
+.dist
 dist
+/dist
 storybook-static
 .env
 .DS_Store

@@ -1,4 +1,4 @@
-import { create } from "@storybook/theming";
+import { create } from "@storybook/theming/create";
 import logoImage from "./public/bridge_tmp_logo.png";
 
 import typography from "../src/tokens/dist/typography.json";

@@ -1,9 +1,8 @@
-import { ArgsTable, Meta, Canvas, Story } from "@storybook/addon-docs";
-import { config } from "storybook-addon-designs";
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/blocks";
 import Button from ".";
 import { ChevronRight } from "@carbon/icons-react";
 
-<Meta title="Components/Button" />
+<Meta title="Components/Button"/>
 
 ## Buttons
 
@@ -16,12 +15,6 @@ buttons are coded as different components and imported here.
     args={{ label: "Button", size: "small" }}
     argTypes={{
       size: { options: ["small", "big"], control: { type: "select" } },
-    }}
-    parameters={{
-      design: config({
-        type: "figma",
-        url: "https://www.figma.com/file/SrlAQ0JfpxPaI8awvXpqsH/GoRight-Website?node-id=210%3A47",
-      }),
     }}
   >
     {(args) => <Button {...args} />}

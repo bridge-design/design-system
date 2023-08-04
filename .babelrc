@@ -1,28 +1,38 @@
 {
   "sourceType": "unambiguous",
   "presets": [
-    [
-      "@babel/preset-env",
-      {"loose": true,
-        "targets": {
-          "browsers": ["last 2 versions"]
-        },
-        "useBuiltIns": "usage",
-        // Set the core-js version as best practice and allow polyifilling
-        // proposal stage features
-        "corejs": { "version": 3, "proposals": true }
-      }
-    ],
-    "@babel/preset-react"
+      [
+          "@babel/preset-env",
+          {
+              "loose": true,
+              "targets": {
+                  "browsers": [
+                      "last 2 versions"
+                  ]
+              },
+              "useBuiltIns": "usage",
+              // Set the core-js version as best practice and allow polyifilling
+              // proposal stage features
+              "corejs": {
+                  "version": 3,
+                  "proposals": true
+              }
+          }
+      ],
+      "@babel/preset-react"
   ],
   "plugins": [
-    ["@babel/plugin-proposal-object-rest-spread"],    
-    [
-      "module-resolver",
-      {
-        "root": ["./src"],
-        "alias": {}
-      }
-    ]
+      [
+          "@babel/plugin-proposal-object-rest-spread"
+      ],
+      [
+          "module-resolver",
+          {
+              "root": [
+                  "./src"
+              ],
+              "alias": {}
+          }
+      ]
   ]
 }

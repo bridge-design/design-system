@@ -1,6 +1,6 @@
 import React from "react";
 import "../src/global.css";
-import bridgeTheme from "./bridge.theme";
+import bridgeTheme from "./bridge";
 
 export const parameters = {
   docs: {
@@ -12,9 +12,4 @@ export const parameters = {
     },
   },
   actions: { disable: true },
-  creevey: {
-    skip: {
-      stories: ["Page"],
-    },
-  },
 };

@@ -38,14 +38,9 @@ const Advantages = ({ colorSchema, content }) => {
 };
 
 Advantages.propTypes = {
-  colorSchema: PropTypes.string | "dark" | "light",
-  content: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.node,
-      title: PropTypes.string,
-      description: PropTypes.string,
-    })
-  ),
+  colorSchema: PropTypes.string.isRequired, // Change PropTypes.func to PropTypes.string
+  content: PropTypes.array.isRequired, 
+  
 };
 
 export default Advantages;

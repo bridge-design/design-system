@@ -65,4 +65,4 @@ HelpTeams.propTypes = {
   photoUrl: PropTypes.string,
 };
 
-export default React.memo(HelpTeams);
+export default HelpTeams;

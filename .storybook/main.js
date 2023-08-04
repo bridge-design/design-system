@@ -1,4 +1,4 @@
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+//** @type { import('@storybook/react-webpack5').StorybookConfig } */
 import path from "path";
 
 const config = {

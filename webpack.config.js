@@ -2,6 +2,7 @@
 /*
  * This webpack config is used for production build of components library
  */
+const React = require("react");
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -16,7 +17,7 @@ module.exports = (_, argv) => {
   const env = argv.mode;
   process.env.BABEL_ENV = env;
 
-  let libraryName = "test-design-system";
+  let libraryName = "design-system";
   let plugins = [
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify(env),
@@ -37,6 +38,8 @@ module.exports = (_, argv) => {
     devtool: "source-map",
     output: {
       path: paths.libOutputDir,
+      filename: libraryName + ".js",
+      libraryTarget: "commonjs2",
       library: {
         type: "commonjs2",
       },
@@ -92,8 +95,10 @@ module.exports = (_, argv) => {
       ],
     },
     plugins: plugins,
-    mode: "production",
+    mode: env,
     externals: {
+      react: "commonjs react",
+      "react-dom": "commonjs react-dom",
       debounce: "debounce", // Assuming debounce is a package name to be externalized
     },
     resolve: {

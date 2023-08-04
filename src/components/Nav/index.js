@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import Text from "../Text";
 import { Menu } from "@carbon/icons-react";
 import { Close } from "@carbon/icons-react";
@@ -71,7 +71,6 @@ Nav.propTypes = {
       href: PropTypes.string,
     })
   ),
-  currentPath: PropTypes.string,
   children: PropTypes.node,
 };
 

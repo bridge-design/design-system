@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"styles.css","sourceRoot":""}
+{"version":3,"file":"styles.css","mappings":"AAAA;EACE,eAAe;EACf,mCAAmC;EACnC,kCAAkC;AACpC,C","sources":["webpack://@bridge-the-gap/design-system/./src/style.css"],"sourcesContent":["html {\n  font-size: 16px;\n  -webkit-font-smoothing: antialiased;\n  text-rendering: optimizeLegibility;\n}"],"names":[],"sourceRoot":""}

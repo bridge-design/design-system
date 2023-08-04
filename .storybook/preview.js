@@ -1,3 +1,4 @@
+import React from "react";
 import "../src/global.css";
 import bridgeTheme from "./bridge";
 

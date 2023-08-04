@@ -4,6 +4,7 @@ tests/report
 !tests/report/README.md
 .dist
 dist
+/dist
 storybook-static
 .env
 .DS_Store

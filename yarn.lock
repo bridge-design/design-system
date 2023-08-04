@@ -3006,9 +3006,9 @@
   integrity sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==
 
 "@storybook/icons@^1.1.0":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@storybook/icons/-/icons-1.1.3.tgz#d82b949f6100ba7352a3705746c7dfd11336f296"
-  integrity sha512-OAukruj///3TDmEYB0XGPd1vfP6j+AUq8ZWN0xSV4B9t+O1RDIJEpkTa2xfycPBVZSmPc/toos9TYWgMAygvXw==
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@storybook/icons/-/icons-1.1.4.tgz#552eea02beffe97a6bbefd7113cb98702d428a40"
+  integrity sha512-Aq9meChGlul/km0ywJvC8entRbjBa4q8i/0wLHLzH8pRmCMMtalTbF/OBn/Whiui7sgAa686jrMHkWlzfoQ0lg==
 
 "@storybook/manager-api@7.0.26":
   version "7.0.26"

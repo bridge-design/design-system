@@ -44,7 +44,7 @@ jobs:
           
       - name: Build Storybook
         run: |
-          yarn storybook build
+          yarn storybook:build
           
       - name: Deploy Storybook
         uses: JamesIves/github-pages-deploy-action@4.1.0

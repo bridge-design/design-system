@@ -8,3 +8,4 @@ dist
 storybook-static
 .env
 .DS_Store
+.yarn

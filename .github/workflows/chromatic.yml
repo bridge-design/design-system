@@ -1,4 +1,4 @@
-name: story-book
+name: chromatic
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  deploy:
+  deploy-chromatic:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
@@ -20,6 +20,13 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          onlyChanged: true
+          exitZeroOnChanges: true
+          buildScriptName: storybook:build
+          
+      - name: Publish Summary
+        run: echo -e "| Results |  |\n| --- | --- |\n| Build Results | ${{steps.chromatic.outputs.buildUrl}} |\n| Storybook Preview | ${{steps.chromatic.outputs.storybookUrl}} |\n| Component Count | ${{steps.chromatic.outputs.componentCount}} |" >> $GITHUB_STEP_SUMMARY
+       
       - name: Create or update comment
         if: github.event_name != 'push'
         uses: peter-evans/create-or-update-comment@v1

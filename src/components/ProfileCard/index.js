@@ -37,13 +37,13 @@ const ProfileCard = ({ photoUrl, name, role, description, twitter, linkedin, git
               !isDescription ? "justify-start lg:gap-[5%] " : "justify-center"
             } gap-[10%] justify-self-end lg:justify-start`}
           >
-            <a href={twitter}>
+            <a href={twitter} className="hover:color-light-on-background-800">
               <LogoTwitter size={32} />
             </a>
-            <a href={linkedin}>
+            <a href={linkedin} className="hover:color-light-on-background-800">
               <LogoLinkedin size={32} />
             </a>
-            <a href={github}>
+            <a href={github} className="hover:color-light-on-background-800">
               <LogoGithub size={32} />
             </a>
           </div>

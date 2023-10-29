@@ -9,9 +9,9 @@ import PropTypes from "prop-types";
 
 const sizes = {
   small:
-    "py-2 px-4 text-base text-baseBolder font-baseBolder tracking-baseBolder leading-baseBolder rounded-md",
-  big: "py-4 px-6 text-2xl  text-xlBolder font-2xlBolder tracking-xlBolder leading-xlBolder rounded-xl",
-}
+    "py-2 px-4 text-base text-baseBolder font-baseBolder tracking-baseBolder leading-baseBolder rounded-sm",
+  big: "py-4 px-6 text-2xl  text-xlBolder font-2xlBolder tracking-xlBolder leading-xlBolder rounded-md",
+};
 const Button = ({ href, label, children, size, className, ...props }) => {
   const Component = href ? "a" : "button";
   return (
@@ -26,7 +26,7 @@ const Button = ({ href, label, children, size, className, ...props }) => {
     >
       {label ? label : children}
     </Component>
-  )
+  );
 };
 
 Button.propTypes = {

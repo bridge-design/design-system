@@ -12,17 +12,17 @@ buttons are coded as different components and imported here.
 <Canvas>
   <Story
     name="Default"
-    args={{ label: "New Button", size: "small" }}
+    args={{ label: "Button", size: "small" }}
     argTypes={{
       size: { options: ["small", "big"], control: { type: "select" } },
     }}
   >
     {(args) => <Button {...args} />}
   </Story>
-  <Story name="Small" args={{ label: "New Button" }} parameters={{ design: { disable: true } }}>
+  <Story name="Small" args={{ label: "Button" }} parameters={{ design: { disable: true } }}>
     {(args) => <Button {...args} size="small" />}
   </Story>
-  <Story name="Big" args={{ label: "New Button" }} parameters={{ design: { disable: true } }}>
+  <Story name="Big" args={{ label: "Button" }} parameters={{ design: { disable: true } }}>
     {(args) => <Button {...args} size="big" />}
   </Story>
   <Story
@@ -42,7 +42,7 @@ buttons are coded as different components and imported here.
   </Story>
   <Story
     name="As Link"
-    args={{ label: "New Button", href: "https://www.varya.me" }}
+    args={{ label: "Button", href: "https://www.varya.me" }}
     argTypes={{
       size: { options: ["small", "big"], control: { type: "select" } },
     }}

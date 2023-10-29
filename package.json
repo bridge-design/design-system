@@ -9,7 +9,7 @@
   "scripts": {
     "start": "yarn tokens && storybook dev -p .storybook/public -p 6006",
     "build": "webpack --mode=production",
-    "storybook:build": "yarn tokens && storybook build -o dist/storybook --loglevel verbose",
+    "storybook:build": "yarn tokens && storybook build -o dist/storybook --loglevel verbose  --webpack-stats-json",
     "storybook:deploy": "gh-pages -d storybook-static",
     "add-component": "node .add-component/index.js",
     "tokens": "style-dictionary build --config ./src/tokens/config.js",

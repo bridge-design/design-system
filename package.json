@@ -14,7 +14,7 @@
     "add-component": "node .add-component/index.js",
     "tokens": "style-dictionary build --config ./src/tokens/config.js",
     "semantic-release": "semantic-release",
-    "chromatic": "npx chromatic --project-token=chpt_23472a6a790b122 --build-script-name=storybook:build"
+    "chromatic": "npx chromatic --project-token=chpt_23472a6a790b122 --build-script-name=storybook:build --only-changed"
   },
   "devDependencies": {
     "@babel/core": "^7.22.8",

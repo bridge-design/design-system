@@ -1,3 +1,10 @@
+## [2.2.0](https://github.com/bridge-design/design-system/compare/2.1.13...2.2.0) (2024-05-27)
+
+
+### Features
+
+* Release 2.1.14 ([ce64259](https://github.com/bridge-design/design-system/commit/ce64259e82de4d6baa4771c977c0709826ec9cba))
+
 ## [1.1.0](https://github.com/bridge-design/design-system/compare/1.0.1...1.1.0) (2024-05-27)
 
 

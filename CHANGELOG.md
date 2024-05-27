@@ -1,3 +1,10 @@
+## [2.4.0](https://github.com/bridge-design/design-system/compare/2.3.0...2.4.0) (2024-05-27)
+
+
+### Features
+
+* Update ProfileCard name ([1f2deb2](https://github.com/bridge-design/design-system/commit/1f2deb251fa08f334e35d7dcb9deece6c33288ba))
+
 ## [2.3.0](https://github.com/bridge-design/design-system/compare/2.2.0...2.3.0) (2024-05-27)
 
 

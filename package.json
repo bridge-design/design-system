@@ -1,6 +1,6 @@
 {
   "name": "@bridge-the-gap/design-system",
-  "version": "2.1.14",
+  "version": "1.1.0",
   "main": "dist/design-system.js",
   "files": [
     "dist/**"
@@ -87,6 +87,5 @@
     "url": "https://github.com/bridge-design/design-system/issues"
   },
   "readme": "ERROR: No README data found!",
-  "homepage": "https://github.com/bridge-design/design-system#readme",
-  "_id": "@bridge-the-gap/design-system@2.1.13"
+  "homepage": "https://github.com/bridge-design/design-system#readme"
 }

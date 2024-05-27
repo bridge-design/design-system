@@ -1,3 +1,10 @@
+## [2.3.0](https://github.com/bridge-design/design-system/compare/2.2.0...2.3.0) (2024-05-27)
+
+
+### Features
+
+* Update ProfileCard role and add description ([9c717cb](https://github.com/bridge-design/design-system/commit/9c717cbe6059bb78589e81e4bdfbee65403492be))
+
 ## [2.2.0](https://github.com/bridge-design/design-system/compare/2.1.13...2.2.0) (2024-05-27)
 
 

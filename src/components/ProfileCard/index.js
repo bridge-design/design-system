@@ -8,7 +8,7 @@ const ProfileCard = ({ photoUrl, name, role, description, twitter, linkedin, git
   return (
     <div
       className={`flex items-start flex-col rounded-[4px] bg-light-on-background-200 lg:max-h-[342px] min-w-min lg:max-w-full overflow-hidden justify-between ${
-        reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+        reverse ? "sm:flex-row-reverse" : "sm:flex-row"
       }`}
     >
       <img src={photoUrl} alt={name} className="rounded-l-[4px] max-w-[306px] object-contain" />
@@ -28,7 +28,7 @@ const ProfileCard = ({ photoUrl, name, role, description, twitter, linkedin, git
         </Text>
         <div className="flex flex-col justify-between flex-1">
           {isDescription && (
-            <Text variant="base" className="flex-1">
+            <Text variant="base" className="flex-1 mb-2">
               {description}
             </Text>
           )}
@@ -37,15 +37,21 @@ const ProfileCard = ({ photoUrl, name, role, description, twitter, linkedin, git
               !isDescription ? "justify-start lg:gap-[5%] " : "justify-center"
             } gap-[10%] justify-self-end lg:justify-start`}
           >
-            <a href={twitter} className="hover:color-light-on-background-800">
-              <LogoTwitter size={32} />
-            </a>
-            <a href={linkedin} className="hover:color-light-on-background-800">
-              <LogoLinkedin size={32} />
-            </a>
-            <a href={github} className="hover:color-light-on-background-800">
-              <LogoGithub size={32} />
-            </a>
+            {twitter && (
+              <a href={twitter} className="hover:color-light-on-background-800">
+                <LogoTwitter size={32} />
+              </a>
+            )}
+            {linkedin && (
+              <a href={linkedin} className="hover:color-light-on-background-800">
+                <LogoLinkedin size={32} />
+              </a>
+            )}
+            {github && (
+              <a href={github} className="hover:color-light-on-background-800">
+                <LogoGithub size={32} />
+              </a>
+            )}
           </div>
         </div>
       </div>

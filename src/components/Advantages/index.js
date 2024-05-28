@@ -24,7 +24,7 @@ const Advantages = ({ colorSchema, content }) => {
               className={classNames(" text-light-on-background-50", colorIconsClass)}
               size={32}
             />
-            <Text as="span" variant="2xl" className="p-1 mt-6 mb-4 ">
+            <Text as="span" variant="2xl" className="p-1 mt-8 mb-4 ">
               {it.title}
             </Text>
             <Text as="span" variant="lg" className="p-1 ">

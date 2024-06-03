@@ -7,14 +7,14 @@ const ProfileCard = ({ photoUrl, name, role, description, twitter, linkedin, git
   const isDescription = description !== undefined;
   return (
     <div
-      className={`flex items-start flex-col rounded-[4px] bg-light-on-background-200 lg:max-h-[342px] min-w-min lg:max-w-full overflow-hidden justify-between ${
+      className={`flex items-start flex-col gap-4 rounded-[4px] bg-light-on-background-200 lg:max-h-min min-w-min lg:max-w-full overflow-hidden justify-between px-4 py-4 ${
         reverse ? "sm:flex-row-reverse" : "sm:flex-row"
       }`}
     >
       <img src={photoUrl} alt={name} className="rounded-l-[4px] max-w-[306px] object-contain" />
       <div
         className={
-          "lg:min-h-[342px] flex flex-col justify-between w-full px-4 py-4 lg:px-10 lg:py-14"
+          "lg:min-h-[342px] flex flex-col justify-between w-full lg:pl-6 xl:py-10 lg:pr-10"
         }
       >
         <Text

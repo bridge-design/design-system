@@ -1,17 +1,3 @@
-## [2.4.2](https://github.com/bridge-design/design-system/compare/2.4.1...2.4.2) (2024-05-28)
-
-
-### Bug Fixes
-
-* decreased top margin for advantages column title ([f29f179](https://github.com/bridge-design/design-system/commit/f29f17930270e8a9ff2bab7169c9892b46c75881))
-
-## [2.4.1](https://github.com/bridge-design/design-system/compare/2.4.0...2.4.1) (2024-05-28)
-
-
-### Bug Fixes
-
-* increased top margin for advantages column title ([b2de93e](https://github.com/bridge-design/design-system/commit/b2de93e98b31913d17ed35f38a66f27c225973b0))
-
 ## [2.4.0](https://github.com/bridge-design/design-system/compare/2.3.0...2.4.0) (2024-05-27)
 
 

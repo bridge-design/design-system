@@ -1,3 +1,10 @@
+## [2.5.0](https://github.com/bridge-design/design-system/compare/2.4.2...2.5.0) (2024-06-04)
+
+
+### Features
+
+* Update ProfileCard -  improve layout styling ([0fd7e34](https://github.com/bridge-design/design-system/commit/0fd7e349b2cb9cc21ba2a46be2e541f281346143))
+
 ## [2.4.0](https://github.com/bridge-design/design-system/compare/2.3.0...2.4.0) (2024-05-27)
 
 

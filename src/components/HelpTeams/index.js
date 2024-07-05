@@ -11,7 +11,8 @@ import classNames from "classnames";
  * description of the benefits of working with an additional team
  */
 
-const HelpTeams = ({ className, photoUrl }) => {
+const HelpTeams = ({ className, photoUrl, linkComponent }) => {
+
   return (
     <div
       className={classNames(
@@ -47,7 +48,7 @@ const HelpTeams = ({ className, photoUrl }) => {
             <Text variant="lg">Continous integration and deveployment</Text>
           </div>
         </div>
-        <CtaLink href="/contact" underline className="text-xl animate-fadeindelay justify-self-end">
+        <CtaLink href="/contact" as={linkComponent} underline className="text-xl animate-fadeindelay justify-self-end">
           Start a conversation
         </CtaLink>
       </div>

@@ -1,3 +1,10 @@
+## [2.6.0](https://github.com/bridge-design/design-system/compare/2.5.0...2.6.0) (2024-07-05)
+
+
+### Features
+
+* CtaLink not working without as ([ff25e10](https://github.com/bridge-design/design-system/commit/ff25e1027d44da733bfb1bf208da8617e6488d28))
+
 ## [2.5.0](https://github.com/bridge-design/design-system/compare/2.4.2...2.5.0) (2024-06-04)
 
 

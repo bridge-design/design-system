@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/bridge-design/design-system/compare/2.6.0...2.6.1) (2024-07-09)
+
+
+### Bug Fixes
+
+* wrong data attribute ([e1b2baa](https://github.com/bridge-design/design-system/commit/e1b2baadd3c55dfcd4c3371dbea7f90a7cd7d412))
+
 ## [2.6.0](https://github.com/bridge-design/design-system/compare/2.5.0...2.6.0) (2024-07-05)
 
 

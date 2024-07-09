@@ -8,7 +8,8 @@ import classnames from "classnames";
  *
  * a label with role description
  */
-const Badge = ({ role, isHidden }) => {
+const Badge = ({ part, isHidden }) => {
+  const role = part;
   const badgeClass = role === "developer" ? "mr-4" : "mb-4";
   const iconClass = role === "developer" ? "ml-6 mt-4" : "ml-3 transform scale-x-mirror scale-x-2";
   return (
@@ -27,7 +28,7 @@ const Badge = ({ role, isHidden }) => {
 
 Badge.propTypes = {
   isHidden: PropTypes.bool,
-  role: PropTypes.string,
+  part: PropTypes.string,
 };
 
 export default Badge;

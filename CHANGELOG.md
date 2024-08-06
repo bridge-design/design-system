@@ -1,3 +1,10 @@
+## [2.6.3](https://github.com/bridge-design/design-system/compare/2.6.2...2.6.3) (2024-08-06)
+
+
+### Bug Fixes
+
+* correct colors text in navigation ([4cc8255](https://github.com/bridge-design/design-system/commit/4cc82558b5a97cfa46e585c7d3be98ee1d830742))
+
 ## [2.6.2](https://github.com/bridge-design/design-system/compare/2.6.1...2.6.2) (2024-08-06)
 
 

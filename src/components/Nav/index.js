@@ -29,9 +29,15 @@ const Nav = ({ items, linkComponent, className, children }) => {
     <nav className={className}>
       <button className="block ml-auto lg:hidden" onClick={() => setMenuOpen((isOpen) => !isOpen)}>
         {isMenuOpen ? (
-          <Close size={24} className="m-6 text-light-on-background-900" />
+          <Close
+            size={24}
+            className="m-6 text-light-on-background-900 fill-current dark:text-white"
+          />
         ) : (
-          <Menu size={24} className="m-6 text-light-on-background-900" />
+          <Menu
+            size={24}
+            className="m-6 text-light-on-background-900  fill-current dark:text-white"
+          />
         )}
       </button>
       <div

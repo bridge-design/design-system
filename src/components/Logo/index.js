@@ -9,7 +9,7 @@ import classnames from "classnames";
 const Logo = ({ className }) => {
   return (
     <div className={classnames("flex", className)}>
-      <BridgeLogo />
+      <BridgeLogo class="fill-current text-black dark:text-white" />
     </div>
   );
 };

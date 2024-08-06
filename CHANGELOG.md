@@ -1,3 +1,10 @@
+## [2.6.2](https://github.com/bridge-design/design-system/compare/2.6.1...2.6.2) (2024-08-06)
+
+
+### Bug Fixes
+
+* correct colors for logo and nav in dark mode ([c9eaae1](https://github.com/bridge-design/design-system/commit/c9eaae1f8066ce5a52d73eb9692e0835cb1b341d))
+
 ## [2.6.1](https://github.com/bridge-design/design-system/compare/2.6.0...2.6.1) (2024-07-09)
 
 

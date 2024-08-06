@@ -47,7 +47,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
             : "hidden lg:flex relative"
         }
       >
-        <ul className="flex flex-col justify-end w-full gap-10 text-center list-none md:inline-flex md:flex-row text-light-on-background-900">
+        <ul className="flex flex-col justify-end w-full gap-10 text-center list-none md:inline-flex md:flex-row text-light-on-background-900 dark:text-white">
           {items &&
             items.map((item) => (
               <li key={item.href} className="px-2 py-2 md:py-0" onClick={() => setTimeout(() => { setMenuOpen(false) }, 600)}>

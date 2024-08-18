@@ -43,7 +43,7 @@ const Nav = ({ items, linkComponent, className, children }) => {
       <div
         className={
           isMenuOpen
-            ? "flex flex-col absolute z-50 top-24 bg-white left-0 right-0 p-20 isOpen"
+            ? "flex flex-col absolute z-50 top-24 bg-white dark:bg-black left-0 right-0 p-20 isOpen"
             : "hidden lg:flex relative"
         }
       >

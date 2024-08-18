@@ -1,3 +1,10 @@
+## [2.6.4](https://github.com/bridge-design/design-system/compare/2.6.3...2.6.4) (2024-08-18)
+
+
+### Bug Fixes
+
+* background color for nav menu in dark mode ([89833e8](https://github.com/bridge-design/design-system/commit/89833e857ed1568241cd0844f2e48dacce2999f9))
+
 ## [2.6.3](https://github.com/bridge-design/design-system/compare/2.6.2...2.6.3) (2024-08-06)
 
 
